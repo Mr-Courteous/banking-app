@@ -1,0 +1,272 @@
+.form-container , .container{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.form-button, button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+
+
+/* CREATE CARD */
+.create-card-container, .investment-container  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card-details {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.card-details p {
+  margin-bottom: 0.5rem;
+}
+
+.error-message,
+.success-message {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 3px;
+}
+
+.error-message {
+  background-color: #f44336;
+  color: white;
+}
+
+.success-message {
+  background-color: #2e8b57;
+  color: white;
+}
+
+
+/* Investment */
+
+
+/* Your existing CSS styles from CreateCard.css can be used here */
+
+/* .investment-container {
+} */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+/* 
+.invest-button {
+} */
+
+.investment-success {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #dff0d8; 
+}
+
+
+/* Carousel */
+
+
+
+.position {
+
+  position: absolute;
+  top: 200px;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+  margin: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .position {
+      top: 30%;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .position {
+      top: 20%;
+  }
+}
+
+
+/* .know-more{
+  width: 100px;
+  background-color: black;
+  color:white;
+  padding: 10px;
+  text-decoration: none;
+} */
+
+.caro-text {
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .caro-text {
+      font-size: 15px;
+  }
+}
+
+
+
+
+
+.know-more {
+  margin: 15px;
+  padding: 10;
+  font-weight: bold;
+  text-align: center;
+  width: 40%;
+  align-items: center;
+  position: absolute;
+  right: 2px;
+
+}
+
+.contact-us {
+  margin: 15px;
+  padding: 10;
+  font-weight: bold;
+  text-align: center;
+  width: 40%;
+  align-items: center;
+  position: absolute;
+  left: 2px;
+
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+
+  .know-more {
+      font-size: 10px;
+      display: inline-block;
+      padding: 5px;
+      margin: 20px;
+      text-align: center;
+      align-items: center;
+      position: absolute;
+      right: 2px;
+      width: 35%;
+      font-size: 7px;
+
+
+  }
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+  .contact-us {
+      font-size: 10px;
+      display: inline-block;
+      padding: 5px;
+      margin: 20px;
+      text-align: center;
+      align-items: center;
+      position: absolute;
+      left: 2px;
+      width: 35%;
+      font-size: 7px;
+
+
+  }
+}
+.caro-image {
+  width: 100%;
+  /* height: 300px; */
+
+
+}
+
+
+
+/* LOADING */
+
+
+.loading-state {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+.loading {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 10px solid #ddd;
+  border-top-color: #4CAF50;
+  animation: loading 1s linear infinite;
+}
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
