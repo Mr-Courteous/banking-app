@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // For navigation after login
 import Header from '../Components/Header';
+import baseUrl from './config'; 
+
 
 const AuthContext = React.createContext(); // Context for authentication state
 
@@ -24,7 +26,7 @@ const Login = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:5000/login', {
+            const response = await axios.post(`${baseUrl}/login`, {
                 email,
                 password,
             }, {

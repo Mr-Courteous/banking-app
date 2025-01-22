@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../Components/Header';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import baseUrl from './config'; 
+
 
 const RegistrationForm = () => {
     const [email, setEmail] = useState('');
@@ -45,7 +47,7 @@ const RegistrationForm = () => {
     const requestOtp = async () => {
         setIsLoading(true); // Set loading state to true before request
         try {
-            const response = await axios.post('https://banking-app-3fyl.vercel.app/send-otp', { email });
+            const response = await axios.post(`${baseUrl}/send-otp`, { email });
             console.log('OTP request sent:', response.data); // For debugging
             setErrorMessage(''); // Clear any previous error messages
         } catch (error) {
@@ -60,7 +62,7 @@ const RegistrationForm = () => {
     const verifyOtp = async () => {
         setIsLoading(true); // Set loading state to true before request
         try {
-            const response = await axios.post('http://localhost:5000/verify-otp', { email, otp });
+            const response = await axios.post(`${baseUrl}/verify-otp`, { email, otp });
             if (response.data.message === 'OTP is valid') {
                 setShowRegistrationForm(true);
                 console.log(response.data.email);
@@ -89,7 +91,7 @@ const RegistrationForm = () => {
             password,
           };
       
-          const response = await axios.post('http://localhost:5000/register', registrationData);
+          const response = await axios.post(`${baseUrl}/register`, registrationData);
           console.log(registrationData);
           console.log('Registration successful:', response.data); // For debugging
       

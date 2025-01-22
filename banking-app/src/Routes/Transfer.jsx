@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import baseUrl from './config'; 
+
 
 const Transfer = () => {
     const [recipientAccountNumber, setRecipientAccountNumber] = useState('');
@@ -19,7 +21,7 @@ const Transfer = () => {
                 throw new Error('No token found');
             }
 
-            const response = await axios.post('http://localhost:5000/transfer', {
+            const response = await axios.post(`${baseUrl}/transfer`, {
                 recipientAccountNumber,
                 amount,
             }, {

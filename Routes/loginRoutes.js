@@ -72,7 +72,7 @@ router.get('/dashboard', authenticateToken, async (req, res) => {
     const userId = decoded.userId;
 
     const user = await BankUser.findById(userId)
-      .select('accountNumber address email phoneNumber name');
+      .select('accountNumber address email phoneNumber name accountBalance');
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });

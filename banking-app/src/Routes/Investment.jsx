@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../Components/Header'; // Assuming Header component exists
+import baseUrl from './config'; 
+
 
 const Investment = () => {
     const [investmentAmount, setInvestmentAmount] = useState('');
@@ -25,7 +27,7 @@ const Investment = () => {
                 throw new Error('No token found');
             }
 
-            const response = await axios.post('http://localhost:5000/start-investment', { amount: investmentAmount }, {
+            const response = await axios.post(`${baseUrl}/start-investment`, { amount: investmentAmount }, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 

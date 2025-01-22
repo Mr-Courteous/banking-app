@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import baseUrl from './config'; 
+
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -17,7 +19,7 @@ const Dashboard = () => {
           throw new Error('No token found');
         }
 
-        const response = await axios.get('http://localhost:5000/dashboard', {
+        const response = await axios.get(`${baseUrl}/dashboard`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserData(response.data);
@@ -49,6 +51,8 @@ const Dashboard = () => {
               <li><strong>Email:</strong> {userData.email}</li>
               <li><strong>Phone Number:</strong> {userData.phoneNumber}</li>
               <li><strong>Account Number:</strong> {userData.accountNumber}</li>
+              <li><strong>Account Balance:</strong> {userData.accountBalance}</li>
+
             </ul>
           </div>
         ) : (

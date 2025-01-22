@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import baseUrl from './config'; 
+
 
 const GenerateCard = () => {
   const [cardDetails, setCardDetails] = useState(null);
@@ -17,7 +19,7 @@ const GenerateCard = () => {
         throw new Error('No token found');
       }
   
-      const response = await axios.post('http://localhost:5000/create-card', {}, {
+      const response = await axios.post(`${baseUrl}/create-card`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
   
