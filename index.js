@@ -26,7 +26,7 @@ app.use(express.json());
 // app.use(cors());
 
 app.use(cors({
-    origin: ' http://localhost:5173', // Replace with your frontend domain
+    origin: ' http://localhost:5173',
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true, // Allow credentials (cookies)
 
