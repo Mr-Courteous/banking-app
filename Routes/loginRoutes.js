@@ -67,7 +67,7 @@ router.get('/dashboard', authenticateToken, async (req, res) => {
     if (expirationTime < currentTime) {
       console.log("token gone wrong")
 
-      return res.status(401).json({ message: 'Token has expired' });
+      return res.status(401).json({ message: 'Token has expired h' });
     }
     const userId = decoded.userId;
 
