@@ -1,0 +1,71 @@
+# Node.js
+/node_modules/
+
+# OS generated files
+/.DS_Store
+/Thumbs.db
+
+# Local environment variables
+.env
+.env.*
+
+# Log files
+*.log
+npm-debug.log*
+
+# Test reports
+coverage/
+
+# IDE files
+.vscode/
+*.suo
+*.user
+*.sln
+*.csproj
+*.unityproj
+*.jar
+
+# Build artifacts
+build/
+dist/
+public/
+
+# Editor files
+*.suo
+*.user
+*.sln
+*.csproj
+*.unityproj
+*.jar
+*.iml
+*.ipr
+
+# Temporary files
+*.tmp
+*.swp
+
+# Specific to some IDEs and editors
+# VS Code
+.vscode/
+
+# Vim
+.swp
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# IntelliJ IDEA
+*.iml
+*.idea/
+
+# Visual Studio
+*.suo
+*.user
+*.sln
+*.csproj
+*.unityproj
+*.jar
+
+# Banking App Frontend (Exclude this folder)
+banking-app/ 
