@@ -5,7 +5,7 @@ const Investment = require('../Models/Investment')
 const Card = require('../Models/Card')
 const BankUser = require('../Models/UserModel');
 const jwt = require('jsonwebtoken');
-const authenticateToken = require ('./authentication')
+const authenticateToken = require('./authentication')
 
 
 
@@ -30,7 +30,7 @@ function generateExpiryDate() {
     now.setMonth(now.getMonth() + 24); // Expiry date in 2 years
     return now;
 }
-router.post('/create-card', authenticateToken,  async (req, res) => {
+router.post('/create-card', authenticateToken, async (req, res) => {
     try {
         const authHeader = req.headers['authorization'];
         if (!authHeader) {
@@ -62,9 +62,10 @@ router.post('/create-card', authenticateToken,  async (req, res) => {
 
         await newCard.save();
 
-        res.status(201).json({ message: 'Card created successfully',
+        res.status(201).json({
+            message: 'Card created successfully',
             cardDetails: newCard
-         });
+        });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });
@@ -74,7 +75,7 @@ router.post('/create-card', authenticateToken,  async (req, res) => {
 
 
 
-router.post('/start-investment', authenticateToken,  async (req, res) => {
+router.post('/start-investment', authenticateToken, async (req, res) => {
     try {
         const authHeader = req.headers['authorization'];
         if (!authHeader) {
@@ -111,7 +112,7 @@ router.post('/start-investment', authenticateToken,  async (req, res) => {
             amount,
             startDate,
             endDate,
-            dailyProfit: (amount * 0.05).toFixed(2), // Calculate daily profit
+            dailyProfit: (amount * 0.30).toFixed(2),
             userId
         });
 
