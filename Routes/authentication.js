@@ -10,7 +10,7 @@ function authenticateToken(req, res, next) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
         if (err) {
             if (err.name === 'TokenExpiredError') {
-                return res.status(401).json({ message: 'Token expired. Please, login again' });
+                return res.status(401).json({ message: 'Your login session has expired. Please, login again' });
             }
             return res.sendStatus(403); // Other errors (e.g., invalid signature) return 403
         }
